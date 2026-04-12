@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "StringExtensions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/StringExtensions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StringExtensions.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "StringExtensions/1.0.0": {
+      "type": "project",
+      "path": "../StringExtensions/StringExtensions.csproj",
+      "msbuildProject": "../StringExtensions/StringExtensions.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "StringExtensions >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Safe2Q\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\COL - SEM - A\\Courses - A\\Semester D - 6\\COMP 367 - DevOps Implementation\\12-\\lab4_q1_artifacts_in_azure_devops\\StringLibSolution\\StringExtensions\\StringExtensions.csproj": {
+              "projectPath": "E:\\COL - SEM - A\\Courses - A\\Semester D - 6\\COMP 367 - DevOps Implementation\\12-\\lab4_q1_artifacts_in_azure_devops\\StringLibSolution\\StringExtensions\\StringExtensions.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

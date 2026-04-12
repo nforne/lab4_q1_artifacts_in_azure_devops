@@ -1,0 +1,12 @@
+E:\COL - SEM - A\Courses - A\Semester D - 6\COMP 367 - DevOps Implementation\12-\lab4_q1_artifacts_in_azure_devops\StringLibSolution\StringExtensions\bin\Debug\net8.0\StringExtensions.deps.json
+E:\COL - SEM - A\Courses - A\Semester D - 6\COMP 367 - DevOps Implementation\12-\lab4_q1_artifacts_in_azure_devops\StringLibSolution\StringExtensions\bin\Debug\net8.0\StringExtensions.dll
+E:\COL - SEM - A\Courses - A\Semester D - 6\COMP 367 - DevOps Implementation\12-\lab4_q1_artifacts_in_azure_devops\StringLibSolution\StringExtensions\bin\Debug\net8.0\StringExtensions.pdb
+E:\COL - SEM - A\Courses - A\Semester D - 6\COMP 367 - DevOps Implementation\12-\lab4_q1_artifacts_in_azure_devops\StringLibSolution\StringExtensions\obj\Debug\net8.0\StringExtensions.GeneratedMSBuildEditorConfig.editorconfig
+E:\COL - SEM - A\Courses - A\Semester D - 6\COMP 367 - DevOps Implementation\12-\lab4_q1_artifacts_in_azure_devops\StringLibSolution\StringExtensions\obj\Debug\net8.0\StringExtensions.AssemblyInfoInputs.cache
+E:\COL - SEM - A\Courses - A\Semester D - 6\COMP 367 - DevOps Implementation\12-\lab4_q1_artifacts_in_azure_devops\StringLibSolution\StringExtensions\obj\Debug\net8.0\StringExtensions.AssemblyInfo.cs
+E:\COL - SEM - A\Courses - A\Semester D - 6\COMP 367 - DevOps Implementation\12-\lab4_q1_artifacts_in_azure_devops\StringLibSolution\StringExtensions\obj\Debug\net8.0\StringExtensions.csproj.CoreCompileInputs.cache
+E:\COL - SEM - A\Courses - A\Semester D - 6\COMP 367 - DevOps Implementation\12-\lab4_q1_artifacts_in_azure_devops\StringLibSolution\StringExtensions\obj\Debug\net8.0\StringExtensions.sourcelink.json
+E:\COL - SEM - A\Courses - A\Semester D - 6\COMP 367 - DevOps Implementation\12-\lab4_q1_artifacts_in_azure_devops\StringLibSolution\StringExtensions\obj\Debug\net8.0\StringExtensions.dll
+E:\COL - SEM - A\Courses - A\Semester D - 6\COMP 367 - DevOps Implementation\12-\lab4_q1_artifacts_in_azure_devops\StringLibSolution\StringExtensions\obj\Debug\net8.0\refint\StringExtensions.dll
+E:\COL - SEM - A\Courses - A\Semester D - 6\COMP 367 - DevOps Implementation\12-\lab4_q1_artifacts_in_azure_devops\StringLibSolution\StringExtensions\obj\Debug\net8.0\StringExtensions.pdb
+E:\COL - SEM - A\Courses - A\Semester D - 6\COMP 367 - DevOps Implementation\12-\lab4_q1_artifacts_in_azure_devops\StringLibSolution\StringExtensions\obj\Debug\net8.0\ref\StringExtensions.dll
