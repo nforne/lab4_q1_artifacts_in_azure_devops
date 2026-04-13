@@ -41,10 +41,11 @@ steps:
 - script: dir "$(Build.ArtifactStagingDirectory)"
   displayName: Show staged packages
 
-- script: |
-    echo "Pushing package to Azure Artifacts feed"
-    dotnet nuget push "$(Build.ArtifactStagingDirectory)/*.nupkg" --source "https://pkgs.dev.azure.com/mnforne/_packaging/artifacts_in_azure_devops/nuget/v3/index.json" --api-key az
-  displayName: Push to Azure Artifacts
-  env:
-    VSS_NUGET_EXTERNAL_FEED_ENDPOINTS: '{"endpointCredentials":[{"endpoint":"https://pkgs.dev.azure.com/mnforne/_packaging/artifacts_in_azure_devops/nuget/v3/index.json","username":"AzureDevOps","password":"$(System.AccessToken)"}]}'
+- task: DotNetCoreCLI@2
+  displayName: 'Push to Azure Artifacts'
+  inputs:
+    command: 'push'
+    searchPatternPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    feedPublish: 'string-extensions-azure/artifacts_in_azure_devops' # Format: Project/Feed
+    publishVstsFeed: 'string-extensions-azure/artifacts_in_azure_devops'
 
