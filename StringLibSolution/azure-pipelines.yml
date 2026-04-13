@@ -18,17 +18,17 @@ steps:
     version: '8.0.x'
 
 - script: |
-    dotnet restore ./StringExtensions/StringExtensions.csproj
-    dotnet restore ./ConsumerApp/ConsumerApp.csproj
+    dotnet restore ./StringLibSolution/StringExtensions/StringExtensions.csproj
+    dotnet restore ./StringLibSolution/ConsumerApp/ConsumerApp.csproj
   displayName: Restore projects
 
-- script: dotnet build ./StringExtensions/StringExtensions.csproj -c $(buildConfiguration) --no-restore
+- script: dotnet build ./StringLibSolution/StringExtensions/StringExtensions.csproj -c $(buildConfiguration) --no-restore
   displayName: Build library
 
-- script: dotnet build ./ConsumerApp/ConsumerApp.csproj -c $(buildConfiguration) --no-restore
+- script: dotnet build ./StringLibSolution/ConsumerApp/ConsumerApp.csproj -c $(buildConfiguration) --no-restore
   displayName: Build consumer app
 
-- script: dotnet pack ./StringExtensions/StringExtensions.csproj -c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory) /p:PackageVersion=$(packageVersion)
+- script: dotnet pack ./StringLibSolution/StringExtensions/StringExtensions.csproj -c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory) /p:PackageVersion=$(packageVersion)
   displayName: Pack NuGet
 
 - task: NuGetAuthenticate@1
