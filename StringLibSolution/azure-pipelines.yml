@@ -42,10 +42,9 @@ steps:
   displayName: Show staged packages
 
 - task: DotNetCoreCLI@2
-  displayName: 'Push to Azure Artifacts'
+  displayName: Push package to Azure Artifacts
   inputs:
-    command: 'push'
-    searchPatternPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    feedPublish: 'string-extensions-azure/artifacts_in_azure_devops' # Format: Project/Feed
-    publishVstsFeed: 'string-extensions-azure/artifacts_in_azure_devops'
+    command: push
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    publishVstsFeed: 'artifacts_in_azure_devops'
 
