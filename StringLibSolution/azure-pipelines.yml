@@ -1,0 +1,43 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  name: 'Default'   # change to your self-hosted pool name if needed
+
+variables:
+  buildConfiguration: 'Release'
+  packageVersion: '1.0.$(Build.BuildId)'
+
+steps:
+- task: UseDotNet@2
+  displayName: Use .NET 8 SDK
+  inputs:
+    packageType: 'sdk'
+    version: '8.0.x'
+
+- script: |
+    dotnet restore ./StringExtensions/StringExtensions.csproj
+    dotnet restore ./ConsumerApp/ConsumerApp.csproj
+  displayName: Restore projects
+
+- script: dotnet build ./StringExtensions/StringExtensions.csproj -c $(buildConfiguration) --no-restore
+  displayName: Build library
+
+- script: dotnet build ./ConsumerApp/ConsumerApp.csproj -c $(buildConfiguration) --no-restore
+  displayName: Build consumer app
+
+- script: dotnet pack ./StringExtensions/StringExtensions.csproj -c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory) /p:PackageVersion=$(packageVersion)
+  displayName: Pack NuGet
+
+- task: NuGetAuthenticate@1
+  displayName: Authenticate to Azure Artifacts
+
+- script: |
+    echo "Pushing package to Azure Artifacts feed"
+    dotnet nuget push "$(Build.ArtifactStagingDirectory)/*.nupkg" --source "https://pkgs.dev.azure.com/mnforne/_packaging/artifacts_in_azure_devops/nuget/v3/index.json" --api-key az
+  displayName: Push to Azure Artifacts
+  env:
+    VSS_NUGET_EXTERNAL_FEED_ENDPOINTS: '{"endpointCredentials":[{"endpoint":"https://pkgs.dev.azure.com/mnforne/_packaging/artifacts_in_azure_devops/nuget/v3/index.json","username":"AzureDevOps","password":"$(System.AccessToken)"}]}'
+
