@@ -38,6 +38,9 @@ steps:
 - task: NuGetAuthenticate@1
   displayName: Authenticate to Azure Artifacts
 
+- script: dir "$(Build.ArtifactStagingDirectory)"
+  displayName: Show staged packages
+
 - script: |
     echo "Pushing package to Azure Artifacts feed"
     dotnet nuget push "$(Build.ArtifactStagingDirectory)/*.nupkg" --source "https://pkgs.dev.azure.com/mnforne/_packaging/artifacts_in_azure_devops/nuget/v3/index.json" --api-key az
