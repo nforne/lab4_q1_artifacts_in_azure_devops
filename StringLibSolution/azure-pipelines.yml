@@ -11,6 +11,10 @@ variables:
   packageVersion: '1.0.$(Build.BuildId)'
 
 steps:
+- checkout: self
+  persistCredentials: true
+- task: NuGetAuthenticate@1
+  displayName: Authenticate to Azure Artifacts
 - task: UseDotNet@2
   displayName: Use .NET 8 SDK
   inputs:
